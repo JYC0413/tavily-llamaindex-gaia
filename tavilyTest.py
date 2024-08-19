@@ -16,6 +16,6 @@ tavily_tool = TavilyToolSpec(
 )
 
 llm = OpenAILike(model=chatModel, api_base=apiBase, api_key=apiKey)
-agent = ReActAgent.from_tools(tavily_tool.to_tool_list(),llm=llm)
+agent = ReActAgent.from_tools(tavily_tool.to_tool_list(),llm=llm, verbose=True)
 
 agent.chat('What happened in the latest Burning Man festival?')
